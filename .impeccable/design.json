@@ -1,0 +1,21 @@
+{
+  "name": "PromptCraft studio wall",
+  "mode": "experience",
+  "direction": "Warm editorial café studio with evidence-led case-study gallery",
+  "tokens": {
+    "paper": "#F7F0E7",
+    "surface": "#FFFAF3",
+    "espresso": "#2B1B14",
+    "caramel": "#D69A5D",
+    "terracotta": "#9A4F2D",
+    "mutedInk": "#6E5A4B",
+    "displayFont": "Noto Serif Thai, Georgia, serif",
+    "bodyFont": "IBM Plex Sans Thai, system-ui, sans-serif",
+    "codeFont": "JetBrains Mono, monospace"
+  },
+  "surfaces": {
+    "hero": "Editorial split layout with supplied image as the proof point",
+    "modules": "Asymmetric selected-work gallery with real refined-output previews",
+    "comparison": "Focused dialog for initial/refined artifact inspection"
+  }
+}
