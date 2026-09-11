@@ -1,6 +1,7 @@
 import type { CSSProperties } from "react";
+import { assetUrl } from "../../lib/utils";
 
-const mascotSrc = "/image/promptcraft-mascot.png";
+const mascotSrc = assetUrl("image/promptcraft-mascot.png");
 
 const bubbles = [
   { left: "5%", size: "clamp(64px, 7vw, 138px)", delay: "-2s", duration: "19s", drift: "42px" },
@@ -17,7 +18,7 @@ export function Hero() {
       className="relative z-[3] isolate block min-h-[max(720px,100svh)] w-full overflow-hidden bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage:
-          "linear-gradient(180deg, rgba(73, 140, 239, 0.08), rgba(29, 89, 165, 0.16)), url('/image/afb29d8d-b16f-4f08-8790-48a820c5c599.png')",
+          `linear-gradient(180deg, rgba(73, 140, 239, 0.08), rgba(29, 89, 165, 0.16)), url("${assetUrl("image/afb29d8d-b16f-4f08-8790-48a820c5c599.png")}")`,
       }}
       aria-labelledby="hero-title"
     >

@@ -109,7 +109,7 @@
   z-index: 0;
   pointer-events: none;
   content: "";
-  background-image: url('/image/bg/creatie-creative-designer-portfolio.image.eOYxEIuj9eit1MkxUJQwRtgpmw.Woblo.png');
+  background-image: var(--paper-grid-bg);
   background-position: top center;
   background-size: 2160px auto;
   background-repeat: repeat-y;
@@ -142,11 +142,8 @@
 
 .about-paper-decor::before {
   background-image:
-    url('/image/bg/creatie-creative-designer-portfolio.svg.svg-68.Woblo.svg'),
-    url('/image/bg/creatie-creative-designer-portfolio.svg.svg-69.Woblo.svg'),
-    url('/image/bg/creatie-creative-designer-portfolio.svg.svg-70.Woblo.svg'),
-    url('/image/bg/creatie-creative-designer-portfolio.svg.svg-71.Woblo.svg'),
-    url('/image/bg/creatie-creative-designer-portfolio.svg.svg-78.Woblo.svg');
+    var(--decor-68), var(--decor-69), var(--decor-70), var(--decor-71),
+    var(--decor-78);
   background-position:
     -24px 16%, calc(100% + 28px) 18%, -18px 82%,
     calc(100% + 34px) 82%, calc(100% - 42px) 8%;
@@ -155,16 +152,9 @@
 
 .slide-paper-decor::before {
   background-image:
-    url('/image/bg/creatie-creative-designer-portfolio.svg.svg-68.Woblo.svg'),
-    url('/image/bg/creatie-creative-designer-portfolio.svg.svg-69.Woblo.svg'),
-    url('/image/bg/creatie-creative-designer-portfolio.svg.svg-70.Woblo.svg'),
-    url('/image/bg/creatie-creative-designer-portfolio.svg.svg-71.Woblo.svg'),
-    url('/image/bg/creatie-creative-designer-portfolio.svg.svg-78.Woblo.svg'),
-    url('/image/bg/creatie-creative-designer-portfolio.svg.svg-68.Woblo.svg'),
-    url('/image/bg/creatie-creative-designer-portfolio.svg.svg-69.Woblo.svg'),
-    url('/image/bg/creatie-creative-designer-portfolio.svg.svg-70.Woblo.svg'),
-    url('/image/bg/creatie-creative-designer-portfolio.svg.svg-71.Woblo.svg'),
-    url('/image/bg/creatie-creative-designer-portfolio.svg.svg-78.Woblo.svg');
+    var(--decor-68), var(--decor-69), var(--decor-70), var(--decor-71),
+    var(--decor-78), var(--decor-68), var(--decor-69), var(--decor-70),
+    var(--decor-71), var(--decor-78);
   background-position:
     4% 18%, 96% 32%, 4% 62%, 96% 82%, 50% 9%,
     12% 88%, 88% 13%, 8% 42%, 92% 56%, 50% 94%;

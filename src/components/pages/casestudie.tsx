@@ -23,6 +23,7 @@ import {
   DialogTitle,
 } from "../ui/dialog";
 import moduleData from "../../data/modules.json";
+import { assetUrl } from "../../lib/utils";
 
 type Category =
   | "Graphics"
@@ -63,6 +64,8 @@ const iconByName: Record<IconName, LucideIcon> = {
 const modules: Module[] = (moduleData as ModuleData[]).map((module) => ({
   ...module,
   icon: iconByName[module.icon],
+  imageInitial: assetUrl(module.imageInitial),
+  imageRefined: assetUrl(module.imageRefined),
 }));
 
 export function CaseStudies() {
@@ -102,7 +105,8 @@ export function CaseStudies() {
     <>
       <section
         id="modules"
-        className="relative z-[3] isolate mt-32 overflow-hidden bg-[#25422c] bg-[url('/image/image.png')] bg-cover bg-[position:center_48%] text-[#fffaf3] max-[640px]:mt-[88px]"
+        className="relative z-[3] isolate mt-32 overflow-hidden bg-[#25422c] bg-cover bg-[position:center_48%] text-[#fffaf3] max-[640px]:mt-[88px]"
+        style={{ backgroundImage: `url("${assetUrl("image/image.png")}")` }}
         aria-labelledby="case-studies-title"
       >
         <div className="relative mx-auto w-[calc(100%-48px)] max-w-[1180px] pb-[70px] pt-[78px] max-[640px]:w-[calc(100%-30px)] max-[640px]:pb-16 max-[640px]:pt-[72px]">

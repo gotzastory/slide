@@ -1,4 +1,5 @@
 import type { LucideIcon } from "lucide-react";
+import { assetUrl } from "../../lib/utils";
 
 type DockItem = {
   label: string;
@@ -12,19 +13,19 @@ const dockItems: DockItem[] = [
   {
     label: "About",
     href: "#method",
-    src: "/image/menu/macos-notes.png",
+    src: assetUrl("image/menu/macos-notes.png"),
     tone: "notes",
   },
   {
     label: "Projects",
     href: "#modules",
-    src: "/image/menu/macos-photos.png",
+    src: assetUrl("image/menu/macos-photos.png"),
     tone: "photos",
   },
   {
     label: "Keynote",
     href: "#about",
-    src: "/image/menu/macos-keynote.png",
+    src: assetUrl("image/menu/macos-keynote.png"),
     tone: "keynote",
   },
 ];
