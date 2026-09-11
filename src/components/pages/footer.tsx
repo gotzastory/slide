@@ -35,7 +35,7 @@ export function Footer() {
         <div className="relative isolate min-h-[690px] overflow-hidden rounded-[30px] bg-[#5e80aa] text-white shadow-[0_18px_45px_rgba(57,67,44,.16)] max-[900px]:min-h-[650px] max-[640px]:min-h-[630px] max-[640px]:rounded-[22px]">
           <img
             className="absolute inset-0 -z-20 size-full object-cover object-center transition-transform duration-700 hover:scale-[1.02] motion-reduce:transition-none"
-            src="/image/case/image.png"
+            src={`${import.meta.env.BASE_URL}image/case/image.png`}
             width={1672}
             height={941}
             alt=""

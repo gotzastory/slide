@@ -3,19 +3,25 @@ import {
   ArrowUpRight,
   ChevronLeft,
   ChevronRight,
-  Download,
   Expand,
   Presentation,
 } from "lucide-react";
 
 
-const slideCount = 36;
+const slideCount = 30;
 const slides = Array.from({ length: slideCount }, (_, index) => {
   const number = String(index + 1).padStart(2, "0");
-  return { number, src: `/slide/rendered/slide-${number}.jpg` };
+  return { number, src: `${import.meta.env.BASE_URL}slide/rendered/slide-${number}.jpg` };
 });
 
-const pdfSource = "/slide/2610717302011%20-%20GE931%20Slide.pdf";
+function getSlideTopic(slide: number) {
+  if (slide <= 6) return "การสร้างรูป ด้วย AI";
+  if (slide <= 12) return "การสร้างความสัมพันธ์ทางคณิตศาสตร์";
+  if (slide <= 18) return "การสร้าง Diagram ผ่าน Mermaid Code";
+  if (slide <= 24) return "การสร้างบทความ ผ่าน LaTeX";
+  if (slide <= 30) return "การสร้าง slide สรุปงานด้วย NotebookLM";
+  return "การสร้าง slide สรุปงานด้วย NotebookLM";
+}
 
 export function Slideshow() {
   const [activeSlide, setActiveSlide] = useState(1);
@@ -67,7 +73,7 @@ export function Slideshow() {
             </h2>
           </div>
           <div className="max-w-[240px] pb-1 text-right font-mono text-[10px] uppercase leading-[1.5] tracking-[0.08em] text-white/55 max-[700px]:text-left">
-            GE931 / 36 slides
+            GE931 / 30 slides
             <br />
             Use ← → to navigate
           </div>
@@ -139,7 +145,7 @@ export function Slideshow() {
 
             <div className="flex items-end justify-between gap-4 px-[5px] pb-px pt-[11px] max-[640px]:flex-col max-[640px]:items-start max-[640px]:gap-2">
               <strong className="font-['Noto_Serif_Thai',Georgia,serif] text-[clamp(17px,2.2vw,25px)] leading-[1.1]">
-                การสร้างรูป ด้วย AI
+                {getSlideTopic(activeSlide)}
               </strong>
               <span className="inline-flex items-center gap-[3px] text-right font-mono text-[9px] leading-[1.2] text-[#816b59]">
                 GE931 / Slide deck <ArrowUpRight size={13} />
@@ -171,14 +177,6 @@ export function Slideshow() {
               >
                 <Expand size={15} />
               </button>
-              <a
-                href={pdfSource}
-                download
-                className="grid size-11 shrink-0 place-items-center rounded-full border border-[#d8c8b8] transition motion-reduce:transition-none hover:border-[#9a4f2d] hover:text-[#9a4f2d] focus-visible:outline-2 focus-visible:outline-[#9a4f2d] focus-visible:outline-offset-2"
-                aria-label="Download source PDF"
-              >
-                <Download size={15} />
-              </a>
             </div>
           </div>
         </div>
