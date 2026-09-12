@@ -1,7 +1,26 @@
-import type { CSSProperties } from "react";
+import { createElement, type CSSProperties } from "react";
+import "@google/model-viewer";
 import { assetUrl } from "../../lib/utils";
 
-const mascotSrc = assetUrl("image/promptcraft-mascot.png");
+const mascotModelSrc = assetUrl("model/PromptCraft_Web.glb");
+
+type ModelViewerProps = {
+  className?: string;
+  ref?: (element: HTMLElement | null) => void;
+  loading?: "auto" | "lazy" | "eager";
+  "auto-rotate"?: boolean;
+  "auto-rotate-delay"?: string;
+  "rotation-per-second"?: string;
+  "camera-orbit"?: string;
+  "field-of-view"?: string;
+  "shadow-intensity"?: string;
+  exposure?: string;
+  "environment-image"?: string;
+};
+
+function ModelViewer(props: ModelViewerProps) {
+  return createElement("model-viewer", props);
+}
 
 const bubbles = [
   { left: "5%", size: "clamp(64px, 7vw, 138px)", delay: "-2s", duration: "19s", drift: "42px" },
@@ -116,12 +135,22 @@ export function Hero() {
           </div>
 
           <div className="pointer-events-none absolute left-1/2 top-1/2 z-[4] h-[72%] w-[72%] -translate-x-1/2 -translate-y-1/2">
-            <img
-              src={mascotSrc}
-              alt="Somsage Cafe mascot wearing sunglasses"
-              fetchPriority="high"
-              width="500"
-              height="500"
+            <ModelViewer
+              ref={(element: HTMLElement | null) => {
+                if (element) {
+                  element.setAttribute("src", mascotModelSrc);
+                  element.setAttribute("alt", "PromptCraft 3D mascot");
+                }
+              }}
+              loading="eager"
+              auto-rotate
+              auto-rotate-delay="0"
+              rotation-per-second="12deg"
+              camera-orbit="0deg 75deg 4m"
+              field-of-view="30deg"
+              shadow-intensity="0.25"
+              exposure="1.1"
+              environment-image="neutral"
               className="size-full animate-[mascot-float_7s_ease-in-out_900ms_infinite] motion-reduce:animate-none object-contain object-center opacity-[0.94] [filter:saturate(0.82)_contrast(1.05)] will-change-transform"
             />
           </div>
