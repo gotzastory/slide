@@ -1,5 +1,4 @@
-import { createElement, type CSSProperties } from "react";
-import "@google/model-viewer";
+import { createElement, useEffect, type CSSProperties } from "react";
 import { assetUrl } from "../../lib/utils";
 
 const mascotModelSrc = assetUrl("model/PromptCraft_Web.glb");
@@ -32,6 +31,12 @@ const bubbles = [
 ];
 
 export function Hero() {
+  useEffect(() => {
+    void import("@google/model-viewer").catch((error: unknown) => {
+      console.error("Failed to load the 3D hero viewer.", error);
+    });
+  }, []);
+
   return (
     <section
       className="relative z-[3] isolate block min-h-[max(720px,100svh)] w-full overflow-hidden bg-cover bg-center bg-no-repeat"

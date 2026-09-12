@@ -40,6 +40,8 @@ export function Footer() {
             height={941}
             alt=""
             aria-hidden="true"
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(33,71,112,.72)_0%,rgba(54,85,103,.2)_42%,rgba(21,41,44,.68)_100%)]" />
 
